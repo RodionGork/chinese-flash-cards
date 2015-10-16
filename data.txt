@@ -1,0 +1,4 @@
+﻿你好  =   hello
+女孩子 =   girl
+母亲  =   mother
+白   =   white, clear, bright, plain, in vain
