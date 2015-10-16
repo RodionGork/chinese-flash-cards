@@ -42,9 +42,16 @@ $(function() {
         $('#zh').text(cards[cur][0]);
         $('#en').text(cards[cur][1]);
     }
+
+    function hide() {
+        cards.splice(cur, 1);
+        cur -= 1;
+        next();
+    }
     
     $.get('./data.txt', '', dataLoaded);
 
     $('#next').click(next);
+    $('#hide').click(hide);
     $('#show').click(show);
 });
