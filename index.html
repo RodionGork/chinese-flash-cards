@@ -12,7 +12,7 @@
             width: 90%;
             margin: 0px auto;
         }
-        #zh {
+        #zh, #zh2 {
             font-size: 600%;
         }
         #en {
@@ -28,7 +28,7 @@
             width: 80%;
             margin: 0px auto;
         }
-        #controls button {
+        #controls button, #controls select {
             font-size: 200%;
         }
     </style>
@@ -37,9 +37,16 @@
     <div id="container">
         <div id="zh"></div>
         <div id="en"></div>
+        <div id="zh2"></div>
     </div>
     <div id="controls">
         <div id="buttons">
+            <select id="dir">
+                <option value="both">Chi & Eng</option>
+                <option value="zh">Chinese</option>
+                <option value="en">English</option>
+            </select>
+            <br/>
             <button id="hide">Hide</button>
             &nbsp;
             <button id="show">Show</button>

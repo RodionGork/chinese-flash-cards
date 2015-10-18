@@ -33,13 +33,25 @@ $(function() {
             shuffle();
             cur = 0;
         }
-        var side = Math.floor(Math.random() * 5) % 2;
+        var side = $('#dir').val();
+        switch (side) {
+            case 'both': side = Math.floor(Math.random() * 5) % 2; break;
+            case 'zh' : side = 1; break;
+            case 'en' : side = 0; break;
+        }
+        $('#zh2').text('');
         $('#zh').text(side == 1 ? cards[cur][0] : '');
         $('#en').text(side == 0 ? cards[cur][1] : '');
     }
 
     function show() {
-        $('#zh').text(cards[cur][0]);
+        var zh = $('#zh');
+        var zhText = cards[cur][0];
+        if (zh.text()) {
+            zh.text(zhText);
+        } else {
+            $('#zh2').text(zhText);
+        }
         $('#en').text(cards[cur][1]);
     }
 
@@ -49,8 +61,24 @@ $(function() {
         next();
     }
     
-    $.get('./data.txt', '', dataLoaded);
-
+    function param(key) {
+        var s = location.href;
+        var pattern = '[\\?\\&]' + key + '\\=';
+        if (!new RegExp(pattern).test(s)) {
+            return null;
+        }
+        var replPattern = new RegExp(pattern + '([A-Za-z0-9\\-]+)');
+        var m = s.match(replPattern);
+        return m[1];
+    }
+    
+    function loadTopic() {
+        var topic = param('topic');
+        $.get('./data/' + (topic != null ? topic : 'example') + '.txt', '', dataLoaded);
+    }
+    
+    loadTopic();
+    
     $('#next').click(next);
     $('#hide').click(hide);
     $('#show').click(show);

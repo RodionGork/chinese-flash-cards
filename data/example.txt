@@ -1,13 +1,10 @@
 你好 = hello
-女孩子 = girl
 母亲 = mother
 白 = white, clear, bright, plain, in vain
 字 = character, pronunciation, calligraphy, script
 名字 = name
 孙女 = granddaughter
 什么 = what, something, anything
-爷爷 = grandfather (on father's side)
-奶奶 = grandmother (on father's side)
 奶 = milk, breast
 是 = to be, yes
 不 = no, not
@@ -23,7 +20,7 @@
 妹 = younger sister
 夫 = husband, man
 夫人 = lady, wife
-丈 = old man, husbald
+丈 = old man, husband
 丈夫 = husband
 天 = sky, day, weather, god
 今 = present, today, current
