@@ -78,7 +78,7 @@ $(function() {
 
     function listLinks() {
         var s = location.href;
-        var m = s.match(/.*?\/(.*)\.github\.io.*/);
+        var m = s.match(/.*\/(.*)\.github\.io.*/);
         $.get("https://api.github.com/repos/" + (m != null ? m[1] : 'rodiongork') + "/chinese-flash-cards/contents/data", function(data) {
             var en = $('#en');
             for (var i in data) {
