@@ -72,14 +72,36 @@ $(function() {
         return m[1];
     }
     
-    function loadTopic() {
-        var topic = param('topic');
-        $.get('./data/' + (topic != null ? topic : 'example') + '.txt', '', dataLoaded);
+    function loadTopic(topic) {
+        $.get('./data/' + topic + '.txt', '', dataLoaded);
+    }
+
+    function listLinks() {
+        var s = location.href;
+        var m = s.match(/.*?\/(.*)\.github\.io.*/);
+        $.get("https://api.github.com/repos/" + (m != null ? m[1] : 'rodiongork') + "/chinese-flash-cards/contents/data", function(data) {
+            var en = $('#en');
+            for (var i in data) {
+                var title = data[i]['name'].replace(/\..*/, '');
+                var href = s + '?topic=' + title;
+                $('<a/>').text(title).attr('href', href).appendTo(en);
+            }
+        });
+    }
+
+    function toList() {
+        location.href = location.href.replace(/\?.*/, '');
     }
     
-    loadTopic();
+    var topic = param('topic');
+    if (topic) {
+        loadTopic(topic);
+        $('#next').click(next);
+        $('#hide').click(hide);
+        $('#show').click(show);
+        $('#back').click(toList);
+    } else {
+        listLinks();
+    }
     
-    $('#next').click(next);
-    $('#hide').click(hide);
-    $('#show').click(show);
 });
