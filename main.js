@@ -90,7 +90,7 @@ $(function() {
     }
 
     function toList() {
-        location.href = location.href.replace(/\?.*/, '');
+        location.replace(location.href.replace(/\?.*/, ''));
     }
     
     var topic = param('topic');
