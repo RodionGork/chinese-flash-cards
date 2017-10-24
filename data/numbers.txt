@@ -20,3 +20,5 @@
 半 = half
 两个半 = two and half
 几 = several, how many
+十二个 = dozen
+两个 = pair
