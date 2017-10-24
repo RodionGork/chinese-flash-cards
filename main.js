@@ -96,13 +96,21 @@ $(function() {
         $.ajax({
             url: contentDataUrl,
             success: onListLoaded,
-            error: onListLoadingError
+            error: onListLoadingError,
+            cache: false,
+            dataType: 'json',
         });
     }
 
     function toList() {
         location.replace(location.href.replace(/\?.*/, ''));
     }
+    
+    var dir = sessionStorage.getItem('dir');
+    $('#dir').val(dir !== null ? dir : 'both');
+    $('#dir').change(function() {
+        sessionStorage.setItem('dir', $('#dir').val());
+    });
     
     var topic = param('topic');
     if (topic) {
