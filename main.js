@@ -75,17 +75,28 @@ $(function() {
     function loadTopic(topic) {
         $.get('./data/' + topic + '.txt', '', dataLoaded);
     }
-
+    
+    function onListLoaded(data) {
+        var en = $('#en');
+        for (var i in data) {
+            var title = data[i]['name'].replace(/\..*/, '');
+            var href = location.href + '?topic=' + title;
+            $('<a/>').text(title).attr('href', href).appendTo(en);
+        }
+    }
+    
+    function onListLoadingError(e, t) {
+        alert('list load error:' + '\n' + t + '\n' + JSON.stringify(e));
+    }
+    
     function listLinks() {
-        var s = location.href;
-        var m = s.match(/.*\/(.*)\.github\.io.*/);
-        $.get("https://api.github.com/repos/" + (m != null ? m[1] : 'rodiongork') + "/chinese-flash-cards/contents/data", function(data) {
-            var en = $('#en');
-            for (var i in data) {
-                var title = data[i]['name'].replace(/\..*/, '');
-                var href = s + '?topic=' + title;
-                $('<a/>').text(title).attr('href', href).appendTo(en);
-            }
+        var m = location.href.match(/.*\/(.*)\.github\.io.*/);
+        var contentDataUrl = "https://api.github.com/repos/"
+                + (m != null ? m[1] : 'rodiongork') + "/chinese-flash-cards/contents/data";
+        $.ajax({
+            url: contentDataUrl,
+            success: onListLoaded,
+            error: onListLoadingError
         });
     }
 
