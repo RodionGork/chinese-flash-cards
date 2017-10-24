@@ -20,7 +20,7 @@
 你 = you, your
 他 = he, his, him
 她 = she, her
-他们 = the, them (males)
+他们 = they, them (males)
 她们 = they, them (females)
 我们 = us, our
 你们 = you, your (plural)

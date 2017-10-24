@@ -9,7 +9,7 @@
 天 = sky, day, weather, god
 今 = present, today, current
 今天 = today
-天 = everyday
+天天 = everyday
 半天 = half of day, quite a while
 干 = to do, trunk, capable
 人 = human, person, everybody
