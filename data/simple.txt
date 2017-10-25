@@ -37,3 +37,10 @@
 它 = it
 石 = stone
 毛 = hair, wool
+乍 = first, suddenly, spread
+作 = rise, work, workshop
+工作 = job, work
+什 = what-, anything (prefix)
+么 = what (adverb affix)
+什么 = what?
+干什么 = what to do?
