@@ -24,6 +24,7 @@
 她们 = they, them (females)
 我们 = us, our
 你们 = you, your (plural)
+人们 = people, men, folk
 姐 = elder sister
 妹 = younger sister
 姐妹 = sisters
@@ -32,4 +33,6 @@
 夫人 = lady, wife
 丈 = old man, husband
 丈夫 = husband
-
+女人 = woman
+马 = horse
+妈 = mom
