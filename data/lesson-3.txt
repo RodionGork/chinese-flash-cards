@@ -42,10 +42,14 @@
 开学 = school opens, new term begins
 出去 = go out
 进来 = come in
+进去 = go in, enter
+上学 = go to school
 长 = long, length
 短 = short
-旧 = old
+长短 = length
+旧 = old, past
 新 = new
+新生 = new student
 高 = tall, high, senior
 兴 = excitement
 高兴 = cheerful, glad, enjoy
